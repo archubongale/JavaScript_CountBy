@@ -5,3 +5,17 @@ var countBy = function(goalNumber,countByNumber) {
   }
   return results;
 }
+
+
+$(document).ready(function() {
+  $("form#countBy").submit(function(event) {
+    
+    var goalNumber = parseInt($("input#goalNumber").val());
+    var countByNumber = parseInt($("input#countByNumber").val());
+    var result = countBy(goalNumber, countByNumber);
+    $(".output").text(result);
+
+    $("#result").show();
+      event.preventDefault();
+  });
+});
